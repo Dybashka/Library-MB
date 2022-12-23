@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+
+  database:
+    container_name: db
+    hostname: db.local
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: admin
+      POSTGRES_DB: libraryMB
+    volumes:
+      - ./date_postgres:/var/lib/postgresql/data
+    ports:
+      - 33333:8080
+
+  app:
+    image: server1
+    hostname: app.local
+    container_name: libraryMB
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - database
+    stdin_open: true
+    tty: true

@@ -1,6 +1,5 @@
 import psycopg2
 from psycopg2 import Error
-from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
 user = input("Введите имя пользователя: ")
 password = input("Введите пароль: ")
@@ -8,13 +7,12 @@ try:
     # Подключение к существующей базе данных
     connection = psycopg2.connect(user=user,
                                   password=password,
-                                  host="127.0.0.1",
-                                  port="5432")
-    connection.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+                                  host="db.local",
+                                  port="5432",
+                                  database="libraryMB")
     # Курсор для выполнения операций с базой данных
     cursor = connection.cursor()
-    sql_create_database = '''CREATE database LibraryMB;
-                              CREATE TABLE books (
+    sql_create_database = '''CREATE TABLE books (
                                     book_id SERIAL PRIMARY KEY,
                                     title VARCHAR(50) NOT NULL,
                                     author VARCHAR(50) NOT NULL,
@@ -73,6 +71,7 @@ try:
                                     FOREIGN KEY (dp_name) REFERENCES departments (dp_name)
                                 );'''
     cursor.execute(sql_create_database)
+    connection.commit()
 except (Exception, Error) as error:
     print("Ошибка при работе с PostgreSQL", error)
 finally:
