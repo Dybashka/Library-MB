@@ -2,15 +2,16 @@ import psycopg2
 import time
 from psycopg2 import Error
 
+print("ДОбро пожаловать ")
 user = input("Введите имя пользователя: ")
 password = input("Введите пароль: ")
 try:
     # Подключение к существующей базе данных
     connection = psycopg2.connect(user=user,
                                   password=password,
-                                  host="127.0.0.1",
+                                  host="db.local",
                                   port="5432",
-                                  database="librarymb")
+                                  database="libraryMB")
 
     # Курсор для выполнения операций с базой данных
     cursor = connection.cursor()
@@ -33,7 +34,10 @@ try:
     n = int(input(msg))
     while n != 0:
         if n == 1:
-            values = tuple(input("Введите через пробел: название филиала, id киги, кол-во книг\n").split())
+            values = list(input("Введите через пробел: название филиала, id киги, кол-во книг\n").split())
+            for i in range(len(values)):
+                values[i] = values[i].encode('utf-8', 'replace').decode('utf-8')
+            values = tuple(values)
             q = "INSERT INTO storing(br_name, book_id, book_cnt) VALUES (%s, %s, %s);"
             cursor.execute(q, values)
             connection.commit()
