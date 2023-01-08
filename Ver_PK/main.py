@@ -2,7 +2,7 @@ import psycopg2
 import time
 from psycopg2 import Error
 
-print("ДОбро пожаловать ")
+print("ДОбро пожаловать!! ")
 user = input("Введите имя пользователя: ")
 password = input("Введите пароль: ")
 try:
