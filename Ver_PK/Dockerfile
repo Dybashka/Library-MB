@@ -4,7 +4,12 @@ WORKDIR /Desktop/Library-MB/Ver_PK
 
 COPY requirements.txt requirements.txt
 
+ENV VIRTUAL_ENV=/opt/venv
+
 RUN pip install -r requirements.txt
+RUN pip install bandit && pip install pycodestyle
+
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 COPY . .
-CMD [ "python3", "main.py" ]
+CMD [ "python3", "./check.py", "host = 0.0.0.0" ]
