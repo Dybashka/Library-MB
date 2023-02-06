@@ -8,10 +8,10 @@ password = input("Введите пароль: ")
 try:
     # Подключение к существующей базе данных
     connection = psycopg2.connect(user=user,
-                                 password=password,
+                                  password=password,
                                   host="db.local",
                                   port="5432",
-                                database="libraryMB")
+                                  database="libraryMB")
 
     # Курсор для выполнения операций с базой данных
     cursor = connection.cursor()
@@ -38,7 +38,7 @@ try:
             for i in range(len(values)):
                 values[i] = values[i].encode('utf-8', 'replace').decode('utf-8')
             values = tuple(values)
-            q = f"INSERT INTO storing(br_name, book_id, book_cnt) VALUES (%s, %s, %s);"
+            q = "INSERT INTO storing(br_name, book_id, book_cnt) VALUES (%s, %s, %s);"
             cursor.execute(q, values)
             connection.commit()
         if n == 2:
