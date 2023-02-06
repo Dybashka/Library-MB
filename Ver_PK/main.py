@@ -11,7 +11,7 @@ try:
                                   password=password,
                                   host="db.local",
                                   port="5432",
-                                  database="libraryMB")
+                                database="libraryMB")
 
     # Курсор для выполнения операций с базой данных
     cursor = connection.cursor()
