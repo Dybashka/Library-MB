@@ -12,7 +12,7 @@ def choice(n):
             return 'Success'
         elif n == 2:
             values = tuple(input("Введите через пробел: название филиала, id книги, кол-во книг\n").split())
-            q = "UPDATE br_name SET book_cnt = 150 WHERE book_id = 2" #UPDATE books SET book_year = 2019 WHERE book_id = 5
+            q = "UPDATE %s SET book_cnt = %s WHERE book_id = %s" #UPDATE books SET book_year = 2019 WHERE book_id = 5
             cursor.execute(q, values)
             connection.commit()
             print("non")
