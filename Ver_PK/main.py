@@ -57,7 +57,7 @@ def choice(n):
         connection.close()
     elif n == 5:
         print("non")
-    elif n == 6:
+    #elif n == 6:
         values = tuple(input("Введите id книги\n").split())
         q = "SELECT book_cnt from storing where book_id = %s"
         cursor.execute(q, values)
