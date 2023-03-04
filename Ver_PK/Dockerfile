@@ -7,5 +7,8 @@ COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 COPY . .
+
+RUN test_lib.py
+
 CMD [ "python3", "main.py" ]
 
