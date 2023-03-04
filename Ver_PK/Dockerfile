@@ -2,7 +2,7 @@ FROM python:3.8-slim-buster
 
 WORKDIR /Desktop/Library-MB/Ver_PK
 
-COPY requirements.txt requirements.txt
+#COPY requirements.txt requirements.txt
 
 ENV VIRTUAL_ENV=/opt/venv
 
