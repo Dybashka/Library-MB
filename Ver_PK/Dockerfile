@@ -13,7 +13,7 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 COPY . .
 
-#RUN test_lib.py
+RUN test_lib.py
 
-CMD [ "python3", "test_lib.py, "host = 0.0.0.0" ]
+CMD [ "python3", "main.py, "host = 0.0.0.0" ]
 
