@@ -1,6 +1,6 @@
 FROM python:3.8-slim-buster
 
-COPY ./Desktop/Library-MB/Ver_PK
+COPY . /Desktop/Library-MB/Ver_PK
 WORKDIR /Desktop/Library-MB/Ver_PK
 
 #COPY requirements.txt requirements.txt
