@@ -1,5 +1,5 @@
 import unittest
-from main import choice, auth
+from main import choice#, auth
 
 
 class MyTestCase(unittest.TestCase):
