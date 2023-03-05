@@ -1,5 +1,6 @@
 FROM python:3.8-slim-buster
 
+COPY ./Desktop/Library-MB/Ver_PK
 WORKDIR /Desktop/Library-MB/Ver_PK
 
 #COPY requirements.txt requirements.txt
@@ -11,7 +12,7 @@ RUN pip install -r requirements.txt
 
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-COPY . .
+№COPY . .
 
 RUN test_lib.py
 
