@@ -12,7 +12,7 @@ RUN pip install -r requirements.txt
 
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-№COPY . .
+#COPY . .
 
 RUN test_lib.py
 
