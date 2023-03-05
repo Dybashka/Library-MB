@@ -75,13 +75,13 @@ def choice(n):
     n = int(input("Введите действие: "))
 
 
-def auth(user,password):
-    if user == 'postgres' and password == 'library':
-        print('Вы подключены!')
-        menu()
-    else:
-        print('Неверные данные, доступ закрыт')
-        return 'auth Fail'
+#def auth(user,password):
+    #if user == 'postgres' and password == 'library':
+        #print('Вы подключены!')
+menu()
+    #else:
+        #print('Неверные данные, доступ закрыт')
+        #return 'auth Fail'
 
 def menu():
     msg = """
@@ -100,9 +100,9 @@ def menu():
 
 
 print('Welcome to Library-MB!')
-user = input("Введите имя пользователя: ")  # postgres
-password = input("Введите пароль: ")  # library
-auth(user,password)
+#user = input("Введите имя пользователя: ")  # postgres
+#password = input("Введите пароль: ")  # library
+#auth(user,password)
 
 """
 try:
