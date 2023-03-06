@@ -5,7 +5,7 @@ from psycopg2 import Error
 def choice(n):
     connection = psycopg2.connect(user="postgres",
                                   password="library",
-                                  host="0.0.0.0",
+                                  host="172.17.0.3",
                                   port="5432",
                                   database="libraryMB")
 
