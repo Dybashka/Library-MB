@@ -9,6 +9,6 @@ RUN pip install -r requirements.txt
 COPY . .
 
 RUN pip install bandit && pip install pycodestyle
-RUN bandit --exit-zero main.py &&  pycodestyle --exit-zero main.py
+RUN bandit --exit-zero main.py &&  pycodestyle --ignore=E501 main.py
 
 ENTRYPOINT ["bash"]
