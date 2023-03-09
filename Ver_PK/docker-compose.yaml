@@ -17,7 +17,7 @@ services:
       - 33333:8080
 
   app:
-    image: dybashka
+    image: dybashka/lib
     hostname: app.local
     container_name: libraryMB
     build:
