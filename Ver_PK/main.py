@@ -9,7 +9,7 @@ try:
     # Подключение к существующей базе данных
     connection = psycopg2.connect(user=user,
                                   password=password,
-                                  host="db.local",
+                                  host="192.168.10.12",
                                   port="5432",
                                   database="libraryMB")
 
