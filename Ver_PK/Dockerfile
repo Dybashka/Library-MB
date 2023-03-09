@@ -8,6 +8,7 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
+RUN pip install bandit && pip install pycodestyle
 RUN bandit main.py  &&  pycodestyle main.py
 
 ENTRYPOINT ["bash"]
