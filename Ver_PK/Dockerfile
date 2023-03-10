@@ -10,5 +10,6 @@ COPY . .
 
 RUN pip install bandit && pip install pycodestyle
 RUN bandit --exit-zero main.py &&  pycodestyle --ignore=E501 main.py
+RUN python3 unit_test.py
 
 ENTRYPOINT ["bash"]
