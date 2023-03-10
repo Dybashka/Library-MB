@@ -4,7 +4,7 @@ from my_fun import retion_student_books, expenses
 
 class MyTestCase(unittest.TestCase):
     def test_retion_1(self):
-        self.assertEqual(retion_student_books(30,100), 0.15) #неверный выбор в меню
+        self.assertEqual(retion_student_books(30,200), 0.15) #неверный выбор в меню
         print("OK")
 
     def test_expenses_1(self):
