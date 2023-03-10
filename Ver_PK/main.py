@@ -5,11 +5,12 @@ from psycopg2 import Error
 print("ДОбро пожаловать ")
 user = input("Введите имя пользователя: ")
 password = input("Введите пароль: ")
+password = "12345"
 try:
     # Подключение к существующей базе данных
     connection = psycopg2.connect(user=user,
                                   password=password,
-                                  host="192.168.10.12",
+                                  host="db.local",
                                   port="5432",
                                   database="libraryMB")
 
