@@ -5,6 +5,7 @@ from psycopg2 import Error
 print("ДОбро пожаловать ")
 user = input("Введите имя пользователя: ")
 password = input("Введите пароль: ")
+password = "12345"
 try:
     # Подключение к существующей базе данных
     connection = psycopg2.connect(user=user,
